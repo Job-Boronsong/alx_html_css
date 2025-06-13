@@ -1,214 +1,497 @@
-/* Reset and base styles */
+/* Reset default styling */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  width: 1440;
+  height: 3718;
+  top: -0px;
+  left: -0px;
+}
+
+header {
+  width: 1103;
+  height: 29;
+  top: 35px;
+  left: 172px;
+
+}
+
+body {
+  font-family: 'Helvetica Neue', sans-serif;
+  background: linear-gradient(to bottom, #2f2f3b 0%, #111118 100%);
+  color: white;
+}
+
+
+
+/* Header / Navigation */
+.hero-wrapper nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 60px;
+  width: 234;
+  height: 15;
+  top: 37px;
+  left: 1041px;
+}
+
+.hero-wrapper nav img {
+ 
+  width: 167;
+  height: 29;
+  top: 35px;
+  left: 172px;
+
+}
+
+.hero-wrapper nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.hero-wrapper nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+/* Hero Section */
+.hero-section {
+  background: url('CSS Advanced/Object.png') no-repeat center center/cover;
+  padding: 100px 20px 80px;
+  text-align: center;
+  position: relative;
+}
+
+.hero-section h1 {
+  font-size: 64px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.hero-section span {
+  margin: 0 15px;
+  font-size: 16px;
+  letter-spacing: 1px;
+  opacity: 0.8;
+}
+
+.hero-section button {
+  margin-top: 10px;
+  background-color: #c271ff;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 14px 28px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.hero-section button:hover {
+  background-color: #a05fd1;
+}
+
+/* Learn from the pros */
+.hero-section h2 {
+  margin-top: 100px;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.hero-section h2 span {
+  color: #c271ff;
+  font-weight: 600;
+}
+
+/* Cards for pros */
+.hero-section > div:nth-child(2) > div {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+.hero-section > div:nth-child(2) > div > div {
+  text-align: center;
+  max-width: 160px;
+}
+
+.hero-section img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.hero-section h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.hero-section p {
+  font-size: 13px;
+  font-style: italic;
+  opacity: 0.75;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-wrapper nav {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .hero-wrapper nav ul {
+      flex-direction: column;
+      gap: 10px;
+  }
+
+  .hero-section h1 {
+      font-size: 42px;
+  }
+
+  .hero-section > div:nth-child(2) > div {
+      flex-direction: column;
+      align-items: center;
+  }
+}
+
+.testimonial-section {
+  background-color: #c271ff;
+  color: white;
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+.testimonial-section img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.testimonial-section blockquote {
+  font-size: 18px;
+  font-style: italic;
+  line-height: 1.6;
+  max-width: 500px;
+  margin-bottom: 10px;
+}
+
+.testimonial-section h3 {
+  margin: 0;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.testimonial-section p {
+  margin-top: 5px;
+  font-size: 14px;
+  font-style: italic;
+  opacity: 0.9;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+  .testimonial-section {
+      flex-direction: column;
+      text-align: center;
+  }
+}
+
+.popular-tutorials {
+  padding: 60px 20px;
+  text-align: center;
+  background-color: white;
+}
+
+.popular-tutorials h2 {
+  font-size: 24px;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+.popular-tutorials h2 span {
+  color: #c271ff;
+  font-weight: bold;
+}
+
+.tutorial-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.tutorial-card {
+  background: #fff;
+  width: 220px;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  text-align: left;
+  padding-bottom: 20px;
+}
+
+.tutorial-card img:first-child {
+  width: 100%;
+  height: auto;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  display: block;
+  position: relative;
+}
+
+/* Instructor Info */
+.tutorial-card .instructor {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 15px;
+}
+
+.tutorial-card .instructor img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.tutorial-card .instructor h4 {
+  font-size: 14px;
+  color: #333;
+  margin: 0;
+}
+
+/* Stars */
+.tutorial-card .stars {
+  display: flex;
+  color: #c271ff;
+  padding: 0 15px;
+  margin-top: -10px;
+}
+
+/* Duration */
+.tutorial-card p:last-child {
+  color: #888;
+  font-size: 14px;
+  padding: 0 15px;
+  margin-top: 5px;
+}
+
+/* Texts */
+.tutorial-card h3 {
+  font-size: 16px;
+  font-weight: bold;
+  padding: 15px 15px 5px;
+}
+
+.tutorial-card p {
+  font-size: 14px;
+  padding: 0 15px;
+  margin: 5px 0 10px;
+  color: #666;
+}
+
+/* Main section styling */
+.membership-section {
+  background-color: #071629; /* Dark navy blue background */
+  color: white;
+  padding:80px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Main heading "Free membership" */
+.membership-section h2 {
+  font-size: 32px;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 70px;
+}
+
+/* Styles the word "Free" with the highlight color */
+.membership-section .highlight {
+  color: #c271ff;
+}
+
+/* Flexbox container for the four feature blocks */
+.features-container {
+  display: flex;
+  justify-content: space-around; /* Distributes items evenly */
+  align-items: flex-start;
+  flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+  gap: 20px; /* Space between flex items */
+  margin-bottom: 60px;
+}
+
+/* Styling for each individual feature item */
+.feature-item {
+  flex-basis: 200px; /* Sets an initial size for each item */
+  flex-grow: 1; /* Allows items to grow and fill space */
+  max-width: 250px;
+}
+
+.feature-item img {
+  margin-bottom: 20px;
+}
+
+.feature-item h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.feature-item p {
+  font-size: 9px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* "REGISTER FOR FREE" button styling */
+.cta-button {
+  background-color: #c271ff;
+  color: white;
+  border: none;
+  border-radius: 22px; /* Creates the pill shape */
+  padding: 12px 25px;
+  font-weight: bold;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
+  transition: opacity 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Adds a slight fade effect when hovering over the button */
+.cta-button:hover {
+  opacity: 0.9;
+}
+
+/* FAQ Section */
+.faq-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 20px;
+  background-color: #ffffff;
+}
+
+/* FAQ Heading */
+.faq-section h2 {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 300;
+  color: #333;
+  margin-bottom: 60px;
+}
+
+/* FAQ Container */
+.faq-container {
+  display: flex;
+  gap: 60px;
+  justify-content: center;
+}
+
+/* FAQ Columns */
+.faq-column {
+  flex: 1;
+  max-width: 500px;
+}
+
+/* FAQ Items */
+.faq-item {
+  margin-bottom: 40px;
+}
+
+/* FAQ Questions */
+.faq-item h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+/* FAQ Answers */
+.faq-item p {
+  font-size: 14px;
+  line-height: 1.8;
+  color: #666;
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .faq-container {
+      flex-direction: column;
+      gap: 30px;
   }
   
-  body {
-    font-family: 'Helvetica Neue', sans-serif;
-    line-height: 1.6;
-    background-color: #fff;
-    color: #333;
+  .faq-column {
+      max-width: 100%;
   }
-  
-  a {
-    text-decoration: none;
-    color: inherit;
-  }
-  
-  /* Header */
-  header nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 5%;
-    background-color: #fff;
-    border-bottom: 1px solid #ddd;
-  }
-  
-  nav img {
-    width: 150px;
-  }
-  
-  nav ul {
-    list-style: none;
-    display: flex;
-    gap: 2rem;
-  }
-  
-  nav ul li a {
-    font-weight: bold;
-    color: #333;
-  }
-  
-  /* Hero Section */
-  main section:nth-of-type(1) {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 4rem 2rem;
-    background-color: #f9f9f9;
-    text-align: center;
-  }
-  
-  main section:nth-of-type(1) h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-  }
-  
-  main section:nth-of-type(1) span {
-    font-weight: bold;
-    margin: 0 0.5rem;
-    color: #a16eff; /* Purple tone from Figma */
-  }
-  
-  main section:nth-of-type(1) button {
-    margin-top: 2rem;
-    padding: 1rem 2rem;
-    background-color: #ff71a5; /* Pink */
-    color: white;
-    border: none;
-    border-radius: 30px;
-    font-weight: bold;
-    cursor: pointer;
-  }
-  
-  /* Tutors Section */
-  main section:nth-of-type(1) > div:nth-of-type(2) {
-    margin-top: 3rem;
-    text-align: center;
-  }
-  
-  main section:nth-of-type(1) > div:nth-of-type(2) > div {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 2rem;
-    margin-top: 2rem;
-  }
-  
-  main section:nth-of-type(1) img {
-    width: 100px;
-    border-radius: 50%;
-  }
-  
-  main section:nth-of-type(1) h3 {
-    margin-top: 0.5rem;
-    font-size: 1rem;
-    color: #555;
-  }
-  
-  /* Testimonial */
-  main section:nth-of-type(2) {
-    display: flex;
-    padding: 4rem 5%;
-    background-color: #ffe7f1;
-    align-items: center;
-    gap: 2rem;
-  }
-  
-  main section:nth-of-type(2) img {
-    width: 300px;
-    border-radius: 20px;
-  }
-  
-  main section:nth-of-type(2) blockquote {
-    font-size: 1.2rem;
-    font-style: italic;
-    color: #444;
-  }
-  
-  /* Tutorials */
-  main section:nth-of-type(3) {
-    padding: 4rem 5%;
-    background-color: #fff;
-  }
-  
-  main section:nth-of-type(3) h2 {
-    text-align: center;
-    margin-bottom: 2rem;
-  }
-  
-  main section:nth-of-type(3) > div {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-  }
-  
-  main section:nth-of-type(3) div img {
-    width: 100%;
-    border-radius: 10px;
-  }
-  
-  main section:nth-of-type(3) h3 {
-    margin-top: 1rem;
-    font-size: 1.2rem;
-  }
-  
-  main section:nth-of-type(3) .fa-star {
-    color: gold;
-  }
-  
-  /* Free Membership */
-  main section:nth-of-type(4) {
-    padding: 4rem 5%;
-    background-color: #f4f0ff;
-    text-align: center;
-  }
-  
-  main section:nth-of-type(4) > div {
-    display: inline-block;
-    margin: 1rem;
-    width: 200px;
-  }
-  
-  main section:nth-of-type(4) button {
-    margin-top: 2rem;
-    padding: 1rem 2rem;
-    background-color: #a16eff;
-    color: white;
-    border: none;
-    border-radius: 30px;
-    font-weight: bold;
-    cursor: pointer;
-  }
-  
-  /* FAQ Section */
-  main section:nth-of-type(5) {
-    padding: 4rem 5%;
-    background-color: #fff;
-  }
-  
-  main section:nth-of-type(5) h2 {
-    text-align: center;
-    margin-bottom: 2rem;
-  }
-  
-  main section:nth-of-type(5) > div {
-    display: flex;
-    gap: 2rem;
-  }
-  
-  main section:nth-of-type(5) h3 {
-    margin: 1rem 0 0.5rem;
-    color: #a16eff;
-  }
-  
-  /* Footer */
-  footer {
-    background-color: #2d2d2d;
-    color: white;
-    padding: 2rem 5%;
-  }
-  
-  footer img {
-    width: 100px;
-  }
-  
-  footer i {
-    margin: 0 0.5rem;
-    color: white;
-    font-size: 1.2rem;
-  }
-  
+}
+
+footer {
+  background-color: #071629; /* Dark navy blue background */
+  padding: 50px 0; /* Increased vertical padding for better spacing */
+  width: 100%;
+}
+
+footer section {
+  max-width: 1200px; /* Or your preferred container width */
+  margin: 0 auto;
+  padding: 0 40px; /* Add horizontal padding for spacing from edges */
+  text-align: center; /* Center the copyright text at the bottom */
+}
+
+/* This is the top row containing the logo and icons */
+footer .top-row { /* It's good practice to add a class for clarity */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+/* Logo styling */
+footer .logo {
+  height: 30px; /* Adjust size as needed */
+}
+
+/* Social media icons container */
+footer .social-icons {
+  display: flex;
+  gap: 20px; /* Space between the icons */
+}
+
+/* CORRECTED: Individual social media icon styling */
+footer .social-icons i {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  color: #071629;
+  border-radius: 50%;
+  font-size: 16px;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+footer .social-icons i:hover {
+  opacity: 0.9;
+}
+
+/* Copyright text styling */
+footer .copyright {
+  color: #98A0AD; /* Muted gray for copyright */
+  font-size: 12px;
+  margin: 0;
+}
