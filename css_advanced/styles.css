@@ -1,497 +1,849 @@
-/* Reset default styling */
-* {
-  width: 1440;
-  height: 3718;
-  top: -0px;
-  left: -0px;
+/* Basic Reset & Font */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro'; /* Using Google Font */
+  color: #fff;
+  height: 100%;
+  overflow-x: hidden; /* Prevent horizontal scroll if content overflows slightly */
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Hero Section - Background & Full Height */
+.hero-section {
+  min-height: 100vh; /* Ensure it takes at least full viewport height */
+  background-image: linear-gradient(rgba(7, 24, 51, 0.6), rgba(7, 24, 51, 0.7)), url('CSS Advanced/Object.png'); /* Dark overlay + your image */
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 5%; /* Padding for content within the hero */
+  box-sizing: border-box;
+}
+
+/* Header */
 header {
-  width: 1103;
-  height: 29;
-  top: 35px;
-  left: 172px;
-
-}
-
-body {
-  font-family: 'Source Sans Pro';
-  background: linear-gradient(to bottom, #2f2f3b 0%, #111118 100%);
-  color: white;
-}
-
-
-
-/* Header / Navigation */
-.hero-wrapper nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 30px 60px;
-  width: 234;
-  height: 15;
-  top: 37px;
-  left: 1041px;
+  padding: 15px 0; /* Vertical padding for header */
+  width: 100%;
+  max-width: 1200px; /* Max width for content alignment */
+  margin: 0 auto; /* Center header content */
+  box-sizing: border-box;
 }
 
-.hero-wrapper nav img {
- 
-  width: 167;
-  height: 29;
-  top: 35px;
-  left: 172px;
-
-}
-
-.hero-wrapper nav ul {
-  list-style: none;
+.logo {
   display: flex;
-  gap: 30px;
-}
-
-.hero-wrapper nav ul li a {
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
-  font-size: 14px;
-}
-
-/* Hero Section */
-.hero-section {
-  background: url('CSS Advanced/Object.png') no-repeat center center/cover;
-  padding: 100px 20px 80px;
-  text-align: center;
-  position: relative;
-}
-
-.hero-section h1 {
-  font-size: 64px;
+  align-items: center;
+  font-size: 1.8em;
   font-weight: 700;
+}
+
+.logo-icon {
+  font-size: 1.2em; /* Adjust if using an image/SVG */
+  margin-right: 10px;
+}
+
+nav ul {
+  display: flex;
+}
+
+nav li {
+  margin-left: 30px;
+}
+
+nav a {
+  font-weight: 600;
+  font-size: 0.9em;
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #c271ff; /* Purple accent on hover */
+}
+
+/* Main Hero Content - Centered Text */
+.hero-content {
+  flex-grow: 1; /* Allows this section to take up available space */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertically center the main title area */
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto; /* Center content horizontally */
+  padding-bottom: 40px; /* Space for the pros section */
+  box-sizing: border-box;
+}
+
+.main-title-area {
+  margin-bottom: auto; /* Pushes this content up, making space for pros below */
+  padding-top: 5vh; /* Some space from the header */
+}
+
+
+.main-title-area h1 {
+  font-size: 6rem; /* Large text */
+  font-weight: 900; /* Very bold */
+  margin: 0 0 15px 0;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.sub-categories {
+  margin-bottom: 35px;
+}
+
+.sub-categories span {
+  margin: 0 15px;
+  font-size: 1.1em;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.cta-button {
+  background-color: #c271ff; /* Purple */
+  color: white;
+  border: none;
+  padding: 18px 40px;
+  border-radius: 30px; /* Rounded button */
+  font-size: 0.9em;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.cta-button:hover {
+  background-color: #a858e0; /* Darker purple */
+  transform: translateY(-2px);
+}
+
+/* Pros Section (Bottom part) */
+.pros-section {
+  width: 100%;
+  margin-top: 50px; /* Space above this section */
+}
+
+.pros-section h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+}
+
+.pros-section h2 .highlight {
+  color: #c271ff; /* Purple for "Learn" */
+  font-weight: 900;
+}
+
+.profiles-container {
+  display: flex;
+  justify-content: space-around; /* Distribute cards evenly */
+  align-items: flex-start; /* Align top of cards */
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  gap: 20px; /* Space between cards */
+}
+
+.profile-card {
+  text-align: center;
+  width: calc(25% - 20px); /* For 4 cards, adjust for gap */
+  min-width: 180px; /* Minimum width before wrapping aggressively */
   margin-bottom: 20px;
 }
 
-.hero-section span {
-  margin: 0 15px;
-  font-size: 16px;
-  letter-spacing: 1px;
-  opacity: 0.8;
-}
-
-.hero-section button {
-  margin-top: 10px;
-  background-color: #c271ff;
-  color: white;
-  font-size: 14px;
-  font-weight: bold;
-  padding: 14px 28px;
-  border: none;
-  border-radius: 25px;
-  cursor: pointer;
-  transition: 0.3s ease;
-}
-
-.hero-section button:hover {
-  background-color: #a05fd1;
-}
-
-/* Learn from the pros */
-.hero-section h2 {
-  margin-top: 100px;
-  font-size: 24px;
-  font-weight: 400;
-}
-
-.hero-section h2 span {
-  color: #c271ff;
-  font-weight: 600;
-}
-
-/* Cards for pros */
-.hero-section > div:nth-child(2) > div {
-  margin-top: 40px;
-  display: flex;
-  justify-content: center;
-  gap: 60px;
-  flex-wrap: wrap;
-}
-
-.hero-section > div:nth-child(2) > div > div {
-  text-align: center;
-  max-width: 160px;
-}
-
-.hero-section img {
-  width: 120px;
+.profile-card img {
+  width: 120px; /* Adjust size as needed */
   height: 120px;
-  border-radius: 50%;
-  object-fit: cover;
+  border-radius: 50%; /* Circular images */
+  object-fit: cover; /* Ensure image covers the circle without stretching */
   margin-bottom: 15px;
+  border: 3px solid rgba(255, 255, 255, 0.1); /* Subtle border */
 }
 
-.hero-section h3 {
-  font-size: 16px;
-  font-weight: 600;
-  margin-bottom: 5px;
+.profile-card h3 {
+  font-size: 1.2em;
+  font-weight: 700;
+  margin: 0 0 5px 0;
 }
 
-.hero-section p {
-  font-size: 13px;
+.profile-card p {
+  font-size: 0.9em;
+  margin: 0 0 5px 0;
+  line-height: 1.4;
+}
+
+.profile-card .title {
   font-style: italic;
-  opacity: 0.75;
+  color: #e0e0e0;
 }
 
-/* Responsive Design */
+.profile-card .year {
+  font-size: 0.8em;
+  color: #b0b0b0;
+}
+
+/* Basic Responsiveness (Example) */
+@media (max-width: 992px) {
+  .main-title-area h1 {
+      font-size: 4.5rem;
+  }
+  .profile-card {
+      width: calc(50% - 15px); /* 2 cards per row */
+  }
+  .pros-section h2 {
+      font-size: 1.5rem;
+  }
+}
+
 @media (max-width: 768px) {
-  .hero-wrapper nav {
+  header {
       flex-direction: column;
       align-items: center;
+      gap: 15px;
   }
+  nav ul {
+      justify-content: center;
+  }
+  nav li {
+      margin: 0 15px;
+  }
+  .main-title-area h1 {
+      font-size: 3.5rem;
+  }
+  .sub-categories span {
+      font-size: 1em;
+      margin: 0 10px;
+  }
+  .cta-button {
+      padding: 15px 30px;
+      font-size: 0.8em;
+  }
+  .profile-card img {
+      width: 100px;
+      height: 100px;
+  }
+  .profiles-container {
+      justify-content: center; /* Center cards if they don't fill width */
+  }
+}
 
-  .hero-wrapper nav ul {
+@media (max-width: 576px) {
+  .main-title-area h1 {
+      font-size: 2.8rem;
+  }
+  .sub-categories {
+      display: flex;
       flex-direction: column;
       gap: 10px;
   }
-
-  .hero-section h1 {
-      font-size: 42px;
+  .profile-card {
+      width: 80%; /* Stack cards almost full width */
+      margin-left: auto;
+      margin-right: auto;
   }
-
-  .hero-section > div:nth-child(2) > div {
-      flex-direction: column;
-      align-items: center;
+  .pros-section h2 {
+      font-size: 1.3rem;
   }
 }
 
+
+/* Testimonial Section */
 .testimonial-section {
-  background-color: #c271ff;
-  color: white;
-  padding: 60px 20px;
+  background-color: #c271ff; /* Purple background */
+  padding: 60px 5%;
+  box-sizing: border-box;
+}
+
+.testimonial-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.testimonial-content {
   display: flex;
-  justify-content: center;
   align-items: center;
   gap: 40px;
 }
 
-.testimonial-section img {
-  width: 160px;
-  height: 160px;
+.testimonial-image {
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
   object-fit: cover;
+  flex-shrink: 0; /* Prevent image from shrinking */
+  border: 5px solid rgba(255, 255, 255, 0.2); /* Subtle white border */
 }
 
-.testimonial-section blockquote {
-  font-size: 18px;
-  font-style: italic;
+.testimonial-text {
+  flex: 1;
+}
+
+.testimonial-text blockquote {
+  font-size: 1.3em;
   line-height: 1.6;
-  max-width: 500px;
-  margin-bottom: 10px;
+  margin: 0 0 20px 0;
+  font-weight: 400;
+  color: #fff;
 }
 
-.testimonial-section h3 {
-  margin: 0;
-  font-weight: bold;
-  font-size: 16px;
+.testimonial-author h4 {
+  font-size: 1.1em;
+  font-weight: 700;
+  margin: 0 0 5px 0;
+  color: #fff;
 }
 
-.testimonial-section p {
-  margin-top: 5px;
-  font-size: 14px;
+.testimonial-author p {
+  font-size: 0.95em;
   font-style: italic;
-  opacity: 0.9;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.9);
 }
 
-/* Responsive layout */
+/* Responsive Design for Testimonial */
 @media (max-width: 768px) {
   .testimonial-section {
+      padding: 40px 5%;
+  }
+  
+  .testimonial-content {
       flex-direction: column;
       text-align: center;
+      gap: 25px;
+  }
+  
+  .testimonial-image {
+      width: 120px;
+      height: 120px;
+  }
+  
+  .testimonial-text blockquote {
+      font-size: 1.15em;
   }
 }
 
-.popular-tutorials {
-  padding: 60px 20px;
+@media (max-width: 576px) {
+  .testimonial-section {
+      padding: 30px 5%;
+  }
+  
+  .testimonial-image {
+      width: 100px;
+      height: 100px;
+  }
+  
+  .testimonial-text blockquote {
+      font-size: 1.05em;
+  }
+  
+  .testimonial-author h4 {
+      font-size: 1em;
+  }
+  
+  .testimonial-author p {
+      font-size: 0.9em;
+  }
+}
+
+
+/* Popular Tutorials Section */
+.popular-tutorials-section {
+  padding: 60px 5%;
+  background-color: #fff; /* White background for this section */
+  box-sizing: border-box;
+}
+
+.tutorials-container {
+  max-width: 1200px; /* Adjust as needed */
+  margin: 0 auto;
+}
+
+.popular-tutorials-title {
   text-align: center;
-  background-color: white;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #333; /* Dark grey for "Most" and "tutorials" */
+  margin-bottom: 50px;
 }
 
-.popular-tutorials h2 {
-  font-size: 24px;
-  margin-bottom: 40px;
-  color: #333;
+.popular-tutorials-title .highlight {
+  color: #c271ff; /* Purple for "popular" */
 }
 
-.popular-tutorials h2 span {
-  color: #c271ff;
-  font-weight: bold;
-}
-
-.tutorial-cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+.tutorials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
   gap: 30px;
 }
 
 .tutorial-card {
-  background: #fff;
-  width: 220px;
-  border-radius: 5px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  text-align: left;
-  padding-bottom: 20px;
+  background-color: #fff;
+  border-radius: 8px; /* Optional: slight rounding for cards */
+  overflow: hidden; /* Ensures content fits within rounded corners if any */
+  /* box-shadow: 0 4px 12px rgba(0,0,0,0.08); Optional: subtle shadow */
 }
 
-.tutorial-card img:first-child {
+.card-image-container {
+  position: relative; /* For positioning the play button */
+  cursor: pointer;
+}
+
+.card-thumbnail {
   width: 100%;
-  height: auto;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  display: block;
-  position: relative;
+  height: auto; /* Maintain aspect ratio */
+  display: block; /* Removes extra space below image */
+  aspect-ratio: 16 / 9; /* Common video aspect ratio */
+  object-fit: cover;
 }
 
-/* Instructor Info */
-.tutorial-card .instructor {
+.play-button-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px; /* Adjust size as needed */
+  height: 60px;
+  opacity: 0.9;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.card-image-container:hover .play-button-overlay {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.1); /* Slight zoom on hover */
+}
+
+.card-content {
+  padding: 15px;
+}
+
+.card-title {
+  font-size: 1.2em;
+  font-weight: 700;
+  color: #071629; /* Dark blue/black for title */
+  margin: 0 0 8px 0;
+}
+
+.card-description {
+  font-size: 0.9em;
+  color: #7a7a7a; /* Lighter grey for description */
+  line-height: 1.5;
+  margin: 0 0 15px 0;
+  /* For truncating text to 2 lines (optional) */
+  display: -webkit-box;
+  
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-height: 2.7em; /* 0.9em * 1.5 line-height * 2 lines */
+}
+
+.card-author {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 10px 15px;
+  gap: 8px;
+  margin-bottom: 12px;
 }
 
-.tutorial-card .instructor img {
-  width: 30px;
-  height: 30px;
+.author-avatar {
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
+  object-fit: cover;
 }
 
-.tutorial-card .instructor h4 {
-  font-size: 14px;
-  color: #333;
-  margin: 0;
-}
-
-/* Stars */
-.tutorial-card .stars {
-  display: flex;
-  color: #c271ff;
-  padding: 0 15px;
-  margin-top: -10px;
-}
-
-/* Duration */
-.tutorial-card p:last-child {
-  color: #888;
-  font-size: 14px;
-  padding: 0 15px;
-  margin-top: 5px;
-}
-
-/* Texts */
-.tutorial-card h3 {
-  font-size: 16px;
-  font-weight: bold;
-  padding: 15px 15px 5px;
-}
-
-.tutorial-card p {
-  font-size: 14px;
-  padding: 0 15px;
-  margin: 5px 0 10px;
-  color: #666;
-}
-
-/* Main section styling */
-.membership-section {
-  background-color: #071629; /* Dark navy blue background */
-  color: white;
-  padding:80px;
-  width: 100%;
-  text-align: center;
-}
-
-/* Main heading "Free membership" */
-.membership-section h2 {
-  font-size: 32px;
+.author-name {
+  font-size: 0.9em;
   font-weight: 600;
-  margin-top: 0;
-  margin-bottom: 70px;
+  color: #c271ff; /* Purple for author name */
 }
 
-/* Styles the word "Free" with the highlight color */
-.membership-section .highlight {
-  color: #c271ff;
-}
-
-/* Flexbox container for the four feature blocks */
-.features-container {
-  display: flex;
-  justify-content: space-around; /* Distributes items evenly */
-  align-items: flex-start;
-  flex-wrap: wrap; /* Allows items to wrap on smaller screens */
-  gap: 20px; /* Space between flex items */
-  margin-bottom: 60px;
-}
-
-/* Styling for each individual feature item */
-.feature-item {
-  flex-basis: 200px; /* Sets an initial size for each item */
-  flex-grow: 1; /* Allows items to grow and fill space */
-  max-width: 250px;
-}
-
-.feature-item img {
-  margin-bottom: 20px;
-}
-
-.feature-item h3 {
-  font-size: 18px;
-  font-weight: bold;
-  margin-top: 0;
-  margin-bottom: 10px;
-}
-
-.feature-item p {
-  font-size: 9px;
-  line-height: 1.5;
-  margin: 0;
-}
-
-/* "REGISTER FOR FREE" button styling */
-.cta-button {
-  background-color: #c271ff;
-  color: white;
-  border: none;
-  border-radius: 22px; /* Creates the pill shape */
-  padding: 12px 25px;
-  font-weight: bold;
-  font-size: 12px;
-  letter-spacing: 0.5px;
-  cursor: pointer;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
-  transition: opacity 0.3s ease; /* Smooth transition for hover effect */
-}
-
-/* Adds a slight fade effect when hovering over the button */
-.cta-button:hover {
-  opacity: 0.9;
-}
-
-/* FAQ Section */
-.faq-section {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 80px 20px;
-  background-color: #ffffff;
-}
-
-/* FAQ Heading */
-.faq-section h2 {
-  text-align: center;
-  font-size: 36px;
-  font-weight: 300;
-  color: #333;
-  margin-bottom: 60px;
-}
-
-/* FAQ Container */
-.faq-container {
-  display: flex;
-  gap: 60px;
-  justify-content: center;
-}
-
-/* FAQ Columns */
-.faq-column {
-  flex: 1;
-  max-width: 500px;
-}
-
-/* FAQ Items */
-.faq-item {
-  margin-bottom: 40px;
-}
-
-/* FAQ Questions */
-.faq-item h3 {
-  font-size: 16px;
-  font-weight: 600;
-  color: #333;
-  margin-bottom: 15px;
-}
-
-/* FAQ Answers */
-.faq-item p {
-  font-size: 14px;
-  line-height: 1.8;
-  color: #666;
-  margin: 0;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .faq-container {
-      flex-direction: column;
-      gap: 30px;
-  }
-  
-  .faq-column {
-      max-width: 100%;
-  }
-}
-
-footer {
-  background-color: #071629; /* Dark navy blue background */
-  padding: 50px 0; /* Increased vertical padding for better spacing */
-  width: 100%;
-}
-
-footer section {
-  max-width: 1200px; /* Or your preferred container width */
-  margin: 0 auto;
-  padding: 0 40px; /* Add horizontal padding for spacing from edges */
-  text-align: center; /* Center the copyright text at the bottom */
-}
-
-/* This is the top row containing the logo and icons */
-footer .top-row { /* It's good practice to add a class for clarity */
+.card-meta {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 40px;
 }
 
-/* Logo styling */
-footer .logo {
-  height: 30px; /* Adjust size as needed */
+.star-rating {
+  height: 16px; /* Adjust based on your star image aspect ratio */
+  width: auto;
 }
 
-/* Social media icons container */
-footer .social-icons {
-  display: flex;
-  gap: 20px; /* Space between the icons */
+.tutorial-duration {
+  font-size: 0.85em;
+  font-weight: 600;
+  color: #c271ff; /* Purple for duration */
 }
 
-/* CORRECTED: Individual social media icon styling */
-footer .social-icons i {
+
+/* Responsive Adjustments for Tutorials Grid */
+@media (max-width: 768px) {
+  .popular-tutorials-title {
+      font-size: 1.8rem;
+  }
+
+}
+
+@media (max-width: 576px) {
+  .popular-tutorials-title {
+      font-size: 1.6rem;
+  }
+  .tutorials-grid {
+       grid-template-columns: 1fr; /* Stack to 1 column */
+  }
+  .play-button-overlay {
+      width: 50px;
+      height: 50px;
+  }
+  .card-title {
+      font-size: 1.1em;
+  }
+}
+
+
+.free-membership-section {
+  background-color: #071629; /* Dark blue background */
+  padding: 80px 5%;
+  color: #fff;
+  box-sizing: border-box;
+}
+
+.membership-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.membership-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 60px;
+  color: #fff;
+}
+
+.membership-title .highlight {
+  color: #c271ff; /* Purple for "Free" */
+}
+
+.membership-features {
   display: grid;
-  place-items: center;
-  width: 30px;
-  height: 30px;
-  background-color: white;
-  color: #071629;
-  border-radius: 50%;
-  font-size: 16px;
-  cursor: pointer;
-  transition: opacity 0.3s;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  margin-bottom: 60px;
 }
 
-footer .social-icons i:hover {
-  opacity: 0.9;
+.feature-item {
+  text-align: center;
+  padding: 0 15px;
 }
 
-/* Copyright text styling */
-footer .copyright {
-  color: #98A0AD; /* Muted gray for copyright */
-  font-size: 12px;
+.feature-icon {
+  width: 60px; /* Adjust size based on your smile icon */
+  height: 60px;
+  margin-bottom: 20px;
+  /* If your smile icon needs to be purple, you can use filter */
+  /* filter: brightness(0) saturate(100%) invert(52%) sepia(96%) saturate(7486%) hue-rotate(271deg) brightness(104%) contrast(101%); */
+}
+
+.feature-title {
+  font-size: 1.3em;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 15px 0;
+}
+
+.feature-description {
+  font-size: 0.95em;
+  color: rgba(255, 255, 255, 0.8); /* Slightly transparent white */
+  line-height: 1.6;
   margin: 0;
+}
+
+.membership-cta {
+  text-align: center;
+}
+
+.register-button {
+  background-color: #c271ff; /* Purple background */
+  color: #fff;
+  border: none;
+  padding: 18px 40px;
+  border-radius: 30px; /* Rounded button */
+  font-size: 0.9em;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.register-button:hover {
+  background-color: #a858e0; /* Darker purple on hover */
+  transform: translateY(-2px);
+}
+
+/* Responsive Design for Free Membership */
+@media (max-width: 992px) {
+  .membership-features {
+      grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
+      gap: 30px;
+  }
+  
+  .membership-title {
+      font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .free-membership-section {
+      padding: 60px 5%;
+  }
+  
+  .membership-features {
+      gap: 25px;
+      margin-bottom: 50px;
+  }
+  
+  .feature-icon {
+      width: 50px;
+      height: 50px;
+  }
+  
+  .feature-title {
+      font-size: 1.2em;
+  }
+  
+  .feature-description {
+      font-size: 0.9em;
+  }
+  
+  .register-button {
+      padding: 15px 35px;
+      font-size: 0.85em;
+  }
+}
+
+@media (max-width: 576px) {
+  .membership-features {
+      grid-template-columns: 1fr; /* Stack to 1 column on small screens */
+      gap: 20px;
+  }
+  
+  .membership-title {
+      font-size: 1.8rem;
+      margin-bottom: 40px;
+  }
+  
+  .feature-item {
+      padding: 0 10px;
+  }
+  
+  .register-button {
+      padding: 14px 30px;
+      font-size: 0.8em;
+  }
+}
+
+
+.faq-section {
+  background-color: #fff; /* White background */
+  padding: 80px 5%;
+  box-sizing: border-box;
+}
+
+.faq-container {
+  max-width: 900px; /* Adjust width based on the screenshot's content width */
+  margin: 0 auto;
+  text-align: center; /* Center the F.A.Q. title */
+}
+
+.faq-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #071629; /* Dark color */
+  margin-bottom: 60px;
+  text-transform: uppercase; /* F.A.Q. is uppercase */
+  letter-spacing: 0.05em; /* Optional: add slight letter spacing */
+}
+
+.faq-columns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Two columns, stacks on small screens */
+  gap: 50px; /* Space between columns */
+  text-align: left; /* Align text within columns to the left */
+}
+
+
+
+.faq-item {
+  margin-bottom: 40px; /* Space between FAQ items within a column */
+}
+
+.faq-item:last-child {
+  margin-bottom: 0; /* No margin for the last item in a column */
+}
+
+.question-title {
+  font-size: 1.1em;
+  font-weight: 600;
+  color: #071629; /* Dark color for questions */
+  margin: 0 0 15px 0;
+}
+
+.answer-text {
+  font-size: 0.95em;
+  color: #7a7a7a; /* Grey color for answers */
+  line-height: 1.8; /* Increased line height for readability */
+  margin: 0;
+}
+
+/* Responsive Design for FAQ */
+@media (max-width: 992px) {
+  .faq-columns {
+      gap: 30px; /* Reduce gap on smaller screens */
+  }
+  
+  .faq-title {
+       font-size: 2rem;
+       margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+   .faq-section {
+      padding: 60px 5%;
+  }
+  
+  .faq-columns {
+      grid-template-columns: 1fr; /* Stack to 1 column on smaller screens */
+      gap: 40px; /* Space between stacked columns */
+  }
+  
+  .faq-item {
+      margin-bottom: 30px; /* Reduce space between items when stacked */
+  }
+  
+  .question-title {
+      font-size: 1.05em;
+  }
+  
+  .answer-text {
+      font-size: 0.9em;
+  }
+}
+
+@media (max-width: 576px) {
+  .faq-section {
+      padding: 40px 5%;
+  }
+   .faq-title {
+       font-size: 1.8rem;
+       margin-bottom: 30px;
+  }
+  .faq-columns {
+      gap: 30px;
+  }
+}
+
+
+/* Footer base */
+.site-footer {
+  background-color: #071629; /* Dark navy */
+  color: #fff;
+  padding: 30px 20px 40px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+}
+
+/* Container */
+.footer-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Top row: logo left, social right */
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* Logo with text */
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  font-size: 18px;
+  user-select: none;
+}
+
+.footer-logo img {
+  height: 30px;
+  width: auto;
+  filter: brightness(0) invert(1); /* Make dark logo white */
+}
+
+/* Social icons container */
+.footer-social {
+  display: flex;
+  gap: 15px;
+}
+
+/* Social icon links */
+.footer-social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  color: #071629;
+  text-decoration: none;
+  font-size: 18px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.footer-social a:hover {
+  background-color: #b173f1; /* Purple accent */
+  color: #fff;
+  box-shadow: 0 0 8px #b173f1;
+}
+
+/* Bottom row: copyright centered */
+.footer-bottom {
+  margin-top: 25px;
+  text-align: center;
+  opacity: 0.5;
+  font-size: 13px;
+  user-select: none;
+}
+
+/* Responsive: stack on small screens */
+@media (max-width: 480px) {
+  .footer-top {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
 }
